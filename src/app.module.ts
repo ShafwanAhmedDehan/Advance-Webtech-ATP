@@ -2,9 +2,11 @@ import { Module } from '@nestjs/common';
 import { PassengerModule } from './Passenger/Passenger.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MailerModule } from '@nestjs-modules/mailer';
+import { DriverModule } from './Driver/Driver/driver.module';
+import { OwnerModule } from './Transport owner/owner/owner.module';
 
 @Module({
-  imports: [PassengerModule, TypeOrmModule.forRoot(
+  imports: [PassengerModule,DriverModule,OwnerModule, TypeOrmModule.forRoot(
     {
       type: 'postgres',
       host: 'localhost',
